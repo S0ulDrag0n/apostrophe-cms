@@ -4,7 +4,7 @@
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js --trace-warnings",
     "build": "node app apostrophe:generation",
     "docker-backup-content": "docker-compose exec apostrophe ./scripts/docker-backup-content",
     "docker-restore-content": "docker-compose exec apostrophe ./scripts/docker-restore-content"
@@ -16,7 +16,8 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.116.1"
+    "apostrophe": "^2.116.1",
+    "apostrophe-blog": "^2.2.1"
   },
   "nodemonConfig": {
     "verbose": true,

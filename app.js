@@ -13,10 +13,32 @@ const apos = require('apostrophe')({
   // responsible for serving static assets, managing page templates and
   // configuring user accounts.
 
+  bundles: [ 'apostrophe-blog' ],
   modules: {
 
     // Apostrophe module configuration
-
+    'apostrophe-blog': {
+      contextual: true,
+    },
+    'apostrophe-blog-pages': {},
+    'apostrophe-blog-widgets': {},
+    'apostrophe-pages': {
+      // We must list `apostrophe-blog-page` as one of the available page types
+      types: [
+        {
+          name: 'apostrophe-blog-page',
+          label: 'Blog'
+        },
+        {
+          name: 'default',
+          label: 'Default'
+        },
+        {
+          name: 'home',
+          label: 'Home'
+        }
+      ]
+    }
     // Note: most configuration occurs in the respective
     // modules' directories. See lib/apostrophe-assets/index.js for an example.
     // However any modules that are not present by default in Apostrophe must at
