@@ -38,7 +38,7 @@ const apos = require('apostrophe')({
           label: 'Home'
         }
       ]
-    }
+    },
     // Note: most configuration occurs in the respective
     // modules' directories. See lib/apostrophe-assets/index.js for an example.
     // However any modules that are not present by default in Apostrophe must at
