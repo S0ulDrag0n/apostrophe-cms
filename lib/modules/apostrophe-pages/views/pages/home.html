@@ -5,6 +5,23 @@
 
 {% extends "layout.html" %}
 
+{% block beforeMain %}
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+{% endblock %}
+
 {% block main %}
   <div class="main-content">
     <h3>Hello world!

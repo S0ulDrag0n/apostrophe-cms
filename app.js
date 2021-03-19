@@ -30,10 +30,6 @@ const apos = require('apostrophe')({
           label: 'Blog'
         },
         {
-          name: 'default',
-          label: 'Default'
-        },
-        {
           name: 'home',
           label: 'Home'
         }
