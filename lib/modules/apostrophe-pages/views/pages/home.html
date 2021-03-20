@@ -6,20 +6,20 @@
 {% extends "layout.html" %}
 
 {% block beforeMain %}
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
+  <div class="jumbotron">
+    <h1 class="display-4">My Covid Experience</h1>
+    <p class="lead">The struggles from the ICU</p>
+  </div>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{ data.home._url }}">{{ data.home.title }}</a>
+    </li>
+    {% for tab in data.home._children %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ tab._url }}">{{ tab.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock %}
 
 {% block main %}
