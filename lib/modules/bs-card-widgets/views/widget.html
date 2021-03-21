@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    {% if data.widget.heading %}
+      <h5 class="card-title">{{ data.widget.heading }}</h5>
+    {% endif %}
+    {% if data.widget.subtitle %}
+      <h6 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h6>
+    {% endif %}
+    <div class="card-body">
+      {{ apos.area(data.widget, 'content', {}) }}
+    </div>
+  </div>
+</div>

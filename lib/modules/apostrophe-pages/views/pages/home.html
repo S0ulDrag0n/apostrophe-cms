@@ -5,30 +5,31 @@
 
 {% extends "layout.html" %}
 
-{% block beforeMain %}
-  <div class="jumbotron">
-    <h1 class="display-4">My Covid Experience</h1>
-    <p class="lead">The struggles from the ICU</p>
-  </div>
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="{{ data.home._url }}">{{ data.home.title }}</a>
-    </li>
-    {% for tab in data.home._children %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{ tab._url }}">{{ tab.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endblock %}
-
 {% block main %}
-  <div class="main-content">
-    <h3>Hello world!
-      {% if not data.user %}
-        <a class="login-link" href="{{ apos.prefix }}/login">Login</a>
-      {% endif %}
-    </h3>
-    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
+<div style="margin: 25px;">
+  {{ apos.area(data.page, 'homeBodyIntro', {
+    widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Bold', 'Italic' ]
+        },
+        'apostrophe-images': {
+          size: 'full'
+        },
+        'bs-card': {}
+      }
+    })
+  }}
+</div>
+<div style="margin: 25px;">
+  <div class="card">
+    <div class="card-body">
+      {{ apos.area(data.page, 'homeBodyBlog', {
+          widgets: {
+            'apostrophe-blog': {}
+          }
+        })
+      }}
+    </div>
   </div>
+</div>
 {% endblock %}
