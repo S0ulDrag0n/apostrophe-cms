@@ -13,20 +13,29 @@ const apos = require('apostrophe')({
   // responsible for serving static assets, managing page templates and
   // configuring user accounts.
 
-  bundles: [ 'apostrophe-blog' ],
+  // bundles: [ 'custom-blog' ],
   modules: {
 
     // Apostrophe module configuration
-    'apostrophe-blog': {
+    // 'apostrophe-blog': {
+    //   contextual: true,
+    // },
+    // 'apostrophe-blog-pages': {},
+    // 'apostrophe-blog-widgets': {},
+    'custom-blog': {
       contextual: true,
     },
-    'apostrophe-blog-pages': {},
-    'apostrophe-blog-widgets': {},
+    'custom-blog-pages': {
+      extend: 'apostrophe-pieces-pages',
+    },
+    'custom-blog-widgets': {
+      extend: 'apostrophe-pieces-widgets',
+    },
     'apostrophe-pages': {
       // We must list `apostrophe-blog-page` as one of the available page types
       types: [
         {
-          name: 'apostrophe-blog-page',
+          name: 'custom-blog-page',
           label: 'Blog'
         },
         {
