@@ -11,7 +11,9 @@
       {% if piece.publishedAt %}
         <h6 class="card-subtitle mb-2 text-muted">Published {{ piece.publishedAt | date('MMM Do') }} at {{ piece.publishedAt | date('h:mma') }}</h6>
       {% endif %}
-      {{ apos.area(piece, 'blogContent') }}
+      {% if not data.widget.hideContent %}
+        {{ apos.area(piece, 'blogContent') }}
+      {% endif %}
     </div>
   </div>
 {% endfor %}
