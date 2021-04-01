@@ -59,5 +59,6 @@ const apos = require('apostrophe')({
       enableAltField: true
     },
     'bs-card-widgets': {},
+    'bs-grid-widgets': {},
   }
 });
