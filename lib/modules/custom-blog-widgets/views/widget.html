@@ -1,8 +1,17 @@
 {% for piece in data.widget._pieces %}
-  <h4>
-    {% if piece._url %}<a href="{{ piece._url }}">{% endif %}
-      {{ piece.title }}
-    {% if piece._url %}</a>{% endif %}
-  </h4>
-  <h5>Published {{ piece.publishedAt | date('MMM Do') }} at {{ piece.publishedAt | date('h:mma') }}</h5>
+  <div class="card">
+    <div class="card-body">
+      {% if piece._url %}
+        <a href="{{ piece._url }}">
+      {% endif %}
+          <h5 class="card-title">{{ piece.title }}</h5>
+      {% if piece._url %}
+        </a>
+      {% endif %}
+      {% if piece.publishedAt %}
+        <h6 class="card-subtitle mb-2 text-muted">Published {{ piece.publishedAt | date('MMM Do') }} at {{ piece.publishedAt | date('h:mma') }}</h6>
+      {% endif %}
+      {{ apos.area(piece, 'blogContent') }}
+    </div>
+  </div>
 {% endfor %}
