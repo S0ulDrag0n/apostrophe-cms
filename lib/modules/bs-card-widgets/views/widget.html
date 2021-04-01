@@ -6,8 +6,11 @@
     {% if data.widget.subtitle %}
       <h6 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h6>
     {% endif %}
-    <div class="card-body">
-      {{ apos.area(data.widget, 'content', {}) }}
-    </div>
+    {{ apos.area(data.widget, 'content', {
+      'apostrophe-images': {},
+      'apostrophe-rich-text': {},
+      'bs-grid': {},
+      'bs-card': {}
+    }) }}
   </div>
 </div>
