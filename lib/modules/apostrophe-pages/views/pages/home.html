@@ -22,28 +22,12 @@
     }}
   </div>
   <div style="margin: 25px;">
-    <div class="card">
-      <div class="card-body">
-        {{ apos.area(data.page, 'homeBodyBlog', {
-            widgets: {
-              'custom-blog': {}
-            }
-          })
-        }}
-      </div>
-    </div>
-  </div>
-  <div style="margin: 25px;">
-    <div class="card">
-      <div class="card-body">
-        {{ apos.area(data.page, 'test', {
-            widgets: {
-              'bs-grid': {}
-            }
-          })
-        }}
-      </div>
-    </div>
+  {{ apos.area(data.page, 'homeBodyBlog', {
+      widgets: {
+        'custom-blog': {}
+      }
+    })
+  }}
   </div>
 </div>
 {% endblock %}
