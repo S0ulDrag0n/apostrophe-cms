@@ -54,6 +54,9 @@ const apos = require('apostrophe')({
     'apostrophe-images': {
       enableAltField: true
     },
+    'apostrophe-assets': {
+      minify: (process.env.ENV === 'prod')
+    },
     'apostrophe-seo': {},
     'bs-card-widgets': {},
     'bs-grid-widgets': {},
