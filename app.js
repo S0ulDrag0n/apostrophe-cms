@@ -8,6 +8,7 @@ if (process.argv.find(arg => arg.match(/ProcessContainer/))) {
 
 const apos = require('apostrophe')({
   shortName: 'apostrophe-boilerplate',
+  baseUrl: 'https://mycovidexp.com',
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
@@ -53,6 +54,7 @@ const apos = require('apostrophe')({
     'apostrophe-images': {
       enableAltField: true
     },
+    'apostrophe-seo': {},
     'bs-card-widgets': {},
     'bs-grid-widgets': {},
   }

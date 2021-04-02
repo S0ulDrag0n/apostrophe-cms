@@ -1,12 +1,24 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
+{% block extraHead %}
+  {% include "apostrophe-seo:view.html" %}
+{% endblock %}
+
 {% block title %}
   {# Create a useful, SEO-friendly title tag based on what we have #}
   {% if data.piece %}
-    {{ data.piece.title }}
+    {% if data.piece.seoTitle %}
+      {% set title = data.piece.seoTitle %}
+    {% else %}
+      {% set title = data.piece.title %}
+    {% endif %}
   {% elseif data.page %}
-    {{ data.page.title }}
+    {% if data.page.seoTitle %}
+      {% set title = data.page.seoTitle %}
+    {% else %}
+      {% set title = data.page.title %}
+    {% endif %}
   {% else %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
