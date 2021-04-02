@@ -17,11 +17,6 @@ const apos = require('apostrophe')({
   modules: {
 
     // Apostrophe module configuration
-    // 'apostrophe-blog': {
-    //   contextual: true,
-    // },
-    // 'apostrophe-blog-pages': {},
-    // 'apostrophe-blog-widgets': {},
     'custom-blog': {
       contextual: true,
     },
