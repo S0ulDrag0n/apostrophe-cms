@@ -6,7 +6,15 @@
           {{ apos.area(data.widget, 'col' + i + '' + j, {
               widgets: {
                 'apostrophe-images': {},
-                'apostrophe-rich-text': {},
+                'apostrophe-rich-text': {
+                  toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split' ],
+                  styles: [
+                    { name: 'Paragraph', element: 'p' },
+                    { name: 'Section heading', element: 'h2' },
+                    { name: 'Sub-section heading', element: 'h3' }
+                  ],
+                  defaultElement: 'h2'
+                },
                 'bs-card': {}
               }
             })
