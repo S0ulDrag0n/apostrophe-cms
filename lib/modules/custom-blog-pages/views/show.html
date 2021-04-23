@@ -6,7 +6,7 @@
     <div style="margin: 25px;">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ data.piece.title }}</h5>
+          <h1 class="card-title">{{ data.piece.title }}</h1>
           <h6 class="card-subtitle mb-2 text-muted">{{ data.piece.publishedAt | date('MMMM Do') }} at {{ data.piece.publishedAt | date('h:mma') }}</h6>
           {{ apos.area(data.piece, 'blogContent') }}
         </div>
