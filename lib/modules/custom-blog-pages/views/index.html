@@ -1,5 +1,27 @@
 {% extends data.outerLayout %}
-{% block title %}{{ data.page.title }}{% endblock %}
+
+{% block extraHead %}
+  {% include "apostrophe-seo:view.html" %}
+  {% if data.piece %}
+    {% if data.piece.seoTitle %}
+      <meta property="og:title" content="{{ data.piece.seoTitle }} - My Covid Experience" />
+      <meta property="og:description" content="{{ data.piece.seoDescription }}" />
+    {% else %}
+      <meta property="og:title" content="{{ data.piece.title }} - My Covid Experience" />
+    {% endif %}
+  {% elseif data.page %}
+    {% if data.page.seoTitle %}
+      <meta property="og:title" content="{{ data.page.seoTitle }} - My Covid Experience" />
+      <meta property="og:description" content="{{ data.page.seoDescription }}" />
+    {% else %}
+      <meta property="og:title" content="{{ data.page.title }} - My Covid Experience" />
+    {% endif %}
+  {% else %}
+    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+  {% endif %}
+{% endblock %}
+
+{% block title %}Experience Blog - My Covid Experience{% endblock %}
 
 {% block main %}
   <div class="container">
