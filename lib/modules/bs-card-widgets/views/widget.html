@@ -1,7 +1,20 @@
 <div class="card">
   <div class="card-body">
     {% if data.widget.heading %}
-      <h5 class="card-title">{{ data.widget.heading }}</h5>
+      {% switch data.widget.headingSize %}
+        {% case 1 %}
+          <h1 class="card-title">{{ data.widget.heading }}</h1>
+        {% case 2 %}
+          <h2 class="card-title">{{ data.widget.heading }}</h2>
+        {% case 3 %}
+          <h3 class="card-title">{{ data.widget.heading }}</h3>
+        {% case 4 %}
+          <h4 class="card-title">{{ data.widget.heading }}</h4>
+        {% case 6 %}
+          <h6 class="card-title">{{ data.widget.heading }}</h6>
+        {% case default %}
+          <h5 class="card-title">{{ data.widget.heading }}</h5>
+      {% endswitch %}
     {% endif %}
     {% if data.widget.subtitle %}
       <h6 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h6>
