@@ -1,23 +1,35 @@
 <div class="card">
   <div class="card-body">
     {% if data.widget.heading %}
-      {% switch data.widget.headingSize %}
-        {% case 1 %}
-          <h1 class="card-title">{{ data.widget.heading }}</h1>
-        {% case 2 %}
-          <h2 class="card-title">{{ data.widget.heading }}</h2>
-        {% case 3 %}
-          <h3 class="card-title">{{ data.widget.heading }}</h3>
-        {% case 4 %}
-          <h4 class="card-title">{{ data.widget.heading }}</h4>
-        {% case 6 %}
-          <h6 class="card-title">{{ data.widget.heading }}</h6>
-        {% case default %}
-          <h5 class="card-title">{{ data.widget.heading }}</h5>
-      {% endswitch %}
+      {% if data.widget.headingSize == 1 %}
+        <h1 class="card-title">{{ data.widget.heading }}</h1>
+      {% elif data.widget.headingSize == 2 %}
+        <h2 class="card-title">{{ data.widget.heading }}</h2>
+      {% elif data.widget.headingSize == 3 %}
+        <h3 class="card-title">{{ data.widget.heading }}</h3>
+      {% elif data.widget.headingSize == 4 %}
+        <h4 class="card-title">{{ data.widget.heading }}</h4>
+      {% elif data.widget.headingSize == 5 %}
+        <h5 class="card-title">{{ data.widget.heading }}</h5>
+      {% elif data.widget.headingSize == 6 %}
+        <h6 class="card-title">{{ data.widget.heading }}</h6>
+      {% endif %}
     {% endif %}
     {% if data.widget.subtitle %}
-      <h6 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h6>
+      
+      {% if data.widget.headingSize == 1 %}
+        <h1 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h1>
+      {% elif data.widget.headingSize == 2 %}
+        <h2 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h2>
+      {% elif data.widget.headingSize == 3 %}
+        <h3 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h3>
+      {% elif data.widget.headingSize == 4 %}
+        <h4 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h4>
+      {% elif data.widget.headingSize == 5 %}
+        <h5 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h5>
+      {% elif data.widget.headingSize == 6 %}
+        <h6 class="card-subtitle mb-2 text-muted">{{ data.widget.subtitle }}</h6>
+      {% endif %}
     {% endif %}
     {{ apos.area(data.widget, 'content', {
       'apostrophe-images': {},
