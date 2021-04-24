@@ -1,0 +1,35 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block title %}{{ data.page.title }} - My Covid Experience{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div style="margin: 25px;">
+    {{ apos.area(data.page, 'homeBodyIntro', {
+      widgets: {
+          'apostrophe-rich-text': {
+            toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split' ],
+            styles: [
+              { name: 'Paragraph', element: 'p' },
+              { name: 'Title Heading', element: 'h1' },
+              { name: 'Section heading', element: 'h2' },
+              { name: 'Sub-section heading', element: 'h3' }
+            ],
+            defaultElement: 'h2'
+          },
+          'apostrophe-images': {
+            size: 'full'
+          },
+          'bs-card': {},
+          'apostrophe-forms': {}
+        }
+      })
+    }}
+  </div>
+</div>
+{% endblock %}

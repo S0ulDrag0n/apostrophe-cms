@@ -32,13 +32,17 @@ const apos = require('apostrophe')({
       types: [
         {
           name: 'custom-blog-page',
-          label: 'Blog'
+          label: 'Blog',
         },
         {
           name: 'home',
-          label: 'Home'
-        }
-      ]
+          label: 'Home',
+        },
+        {
+          name: 'single',
+          label: 'Single',
+        },
+      ],
     },
     // Note: most configuration occurs in the respective
     // modules' directories. See lib/apostrophe-assets/index.js for an example.
@@ -82,9 +86,8 @@ const apos = require('apostrophe')({
     // }
     'apostrophe-email': {
       nodemailer: {
-        host: 'smtp.ionos.com',
+        host: process.env.MAIL_HOST,
         port: 587,
-        secure: true,
         auth: {
           user: process.env.CONTACT_EMAIL,
           pass: process.env.CONTACT_PASSWORD,
