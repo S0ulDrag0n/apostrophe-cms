@@ -87,7 +87,7 @@ const apos = require('apostrophe')({
     'apostrophe-email': {
       nodemailer: {
         host: process.env.MAIL_HOST,
-        port: 587,
+        port: process.env.MAIL_HOST_PORT,
         auth: {
           user: process.env.CONTACT_EMAIL,
           pass: process.env.CONTACT_PASSWORD,
