@@ -19,6 +19,7 @@
     "apostrophe": "^2.116.1",
     "apostrophe-forms": "^1.10.3",
     "apostrophe-seo": "^1.4.1",
+    "apostrophe-site-map": "^2.5.3",
     "async": "^3.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1"

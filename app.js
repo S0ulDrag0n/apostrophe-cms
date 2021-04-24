@@ -99,6 +99,14 @@ const apos = require('apostrophe')({
         debug: true,
       },
     },
+    'apostrophe-site-map': {
+      baseUrl: 'https://mycovidexp.com',
+      // array of doc types you do NOT want
+      // to include, even though they are
+      // accessible on the site. You can also
+      // do this at the command line.
+      excludeTypes: [],
+    },
     'apostrophe-seo': {},
     'bs-card-widgets': {},
     'bs-grid-widgets': {},

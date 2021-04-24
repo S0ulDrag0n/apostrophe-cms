@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /modules/
+Sitemap: https://mycovidexp.com/sitemap.xml
