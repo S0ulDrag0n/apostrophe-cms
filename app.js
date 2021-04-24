@@ -90,11 +90,12 @@ const apos = require('apostrophe')({
       nodemailer: {
         host: process.env.MAIL_HOST,
         port: process.env.MAIL_HOST_PORT,
-        secure: true,
+
         auth: {
           user: process.env.CONTACT_EMAIL,
           pass: process.env.CONTACT_PASSWORD,
         },
+        debug: true,
       },
     },
     'apostrophe-seo': {},
