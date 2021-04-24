@@ -57,6 +57,17 @@ const apos = require('apostrophe')({
     'apostrophe-assets': {
       minify: (process.env.ENV === 'prod')
     },
+    'apostrophe-email': {
+      nodemailer: {
+        host: 'smtp.ionos.com',
+        port: 587,
+        secure: true,
+        auth: {
+          user: process.env.CONTACT_EMAIL,
+          pass: process.env.CONTACT_PASSWORD,
+        },
+      },
+    },
     'apostrophe-seo': {},
     'bs-card-widgets': {},
     'bs-grid-widgets': {},
