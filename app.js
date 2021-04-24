@@ -95,6 +95,7 @@ const apos = require('apostrophe')({
           user: process.env.CONTACT_EMAIL,
           pass: process.env.CONTACT_PASSWORD,
         },
+        logger: true,
         debug: true,
       },
     },
