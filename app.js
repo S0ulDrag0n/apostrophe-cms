@@ -6,6 +6,8 @@ if (process.argv.find(arg => arg.match(/ProcessContainer/))) {
   process.argv = [ process.argv[0], 'app.js' ];
 }
 
+console.log('Mail Settings: ', process.env.MAIL_HOST, process.env.MAIL_HOST_PORT, process.env.CONTACT_EMAIL, process.env.CONTACT_PASSWORD);
+
 const apos = require('apostrophe')({
   shortName: 'apostrophe-boilerplate',
   baseUrl: 'https://mycovidexp.com',
@@ -88,6 +90,7 @@ const apos = require('apostrophe')({
       nodemailer: {
         host: process.env.MAIL_HOST,
         port: process.env.MAIL_HOST_PORT,
+        secure: true,
         auth: {
           user: process.env.CONTACT_EMAIL,
           pass: process.env.CONTACT_PASSWORD,
