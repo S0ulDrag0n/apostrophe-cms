@@ -57,6 +57,29 @@ const apos = require('apostrophe')({
     'apostrophe-assets': {
       minify: (process.env.ENV === 'prod')
     },
+    'apostrophe-forms': {
+      // Best practice: set to first or last so that inputs are nested in labels
+      // and easier to style
+      optionLabelPosition: 'last',
+      saveSubmissions: false,
+    },
+    'apostrophe-forms-widgets': {},
+    // Enable only the field widgets that your application needs to make it
+    // easier for application/website managers.
+    'apostrophe-forms-text-field-widgets': {},
+    'apostrophe-forms-textarea-field-widgets': {},
+    // 'apostrophe-forms-file-field-widgets': {},
+    // 'apostrophe-forms-select-field-widgets': {},
+    // 'apostrophe-forms-radio-field-widgets': {},
+    // 'apostrophe-forms-checkboxes-field-widgets': {},
+    'apostrophe-forms-boolean-field-widgets': {},
+    // 'apostrophe-forms-conditional-widgets': {},
+    // 'apostrophe-permissions': {
+    //   construct: function(self, options) {
+    //     // Required if you want file fields to work on public pages.
+    //     self.addPublic([ 'edit-attachment' ]);
+    //   }
+    // }
     'apostrophe-email': {
       nodemailer: {
         host: 'smtp.ionos.com',
