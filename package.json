@@ -21,6 +21,7 @@
     "apostrophe-seo": "^1.4.1",
     "apostrophe-site-map": "^2.5.3",
     "async": "^3.2.0",
+    "compression": "^1.7.4",
     "lodash": "^4.17.21",
     "moment": "^2.29.1"
   },

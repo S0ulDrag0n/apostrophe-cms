@@ -110,5 +110,6 @@ const apos = require('apostrophe')({
     'apostrophe-seo': {},
     'bs-card-widgets': {},
     'bs-grid-widgets': {},
+    'compression-module': {},
   }
 });
