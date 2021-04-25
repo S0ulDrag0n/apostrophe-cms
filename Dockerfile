@@ -1,7 +1,7 @@
 FROM node:14
 ENV APOS_MINIFY=1
-ENV NODE_ENV=production
 ENV APO_BUNDLE=1
+ENV NODE_ENV=production
 WORKDIR /app
 COPY package* ./
 RUN npm ci
@@ -17,7 +17,6 @@ RUN m 3.6
 RUN m tools stable
 RUN npm install -g pm2
 COPY . ./
-RUN npm run build
 RUN ./scripts/docker-build-assets-with-temporary-mongod
 RUN m rm 3.6
 EXPOSE 3000
