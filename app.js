@@ -61,7 +61,8 @@ const apos = require('apostrophe')({
       enableAltField: true
     },
     'apostrophe-assets': {
-      minify: (process.env.ENV === 'prod')
+      lean: true,
+      minify: (process.env.ENV === 'prod'),
     },
     'apostrophe-forms': {
       // Best practice: set to first or last so that inputs are nested in labels
