@@ -61,7 +61,6 @@ const apos = require('apostrophe')({
       enableAltField: true
     },
     'apostrophe-assets': {
-      lean: true,
       minify: (process.env.ENV === 'prod'),
     },
     'apostrophe-forms': {
